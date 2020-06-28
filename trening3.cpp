@@ -47,7 +47,32 @@ int main() {
 
         // Author of the task : Derek Banas
 
+        cout << " How tall is the tree ? : ";
+        int treeHeight = 0, spaces = 0, hashes = 1, stumpSpaces = 0;
+        cin >> treeHeight;
+        spaces = treeHeight - 1;
+        stumpSpaces = treeHeight - 1;
+
+        while(treeHeight != 0)
+        {
+            for(auto x: Range(1, spaces, 1))
+            cout << " ";
+
+            for(auto x: Range(1, hashes, 1))
+            cout << "#";
+
+            cout << "\n";
+
+            spaces -= 1;
+            hashes += 2;
+            treeHeight -= 1;
+
+        }
         
+        for(auto x: Range(1, stumpSpaces, 1))  
+        cout << "  ";
+        cout << "#";
+
 
 
     return 0;
@@ -62,5 +87,13 @@ vector<int> Range(int start, int max, int step) {
     int i = start;
 
     vector<int> range;
+
+    while (i <= max) {
+        range.push_back(i);
+
+        i += step;
+    }
+
+    return range;
 
 }
